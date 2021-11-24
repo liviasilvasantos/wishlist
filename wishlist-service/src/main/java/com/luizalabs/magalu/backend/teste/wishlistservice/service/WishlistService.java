@@ -1,7 +1,6 @@
 package com.luizalabs.magalu.backend.teste.wishlistservice.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,12 +19,15 @@ public class WishlistService {
 		return wishlistRepository.save(wishlist);
 	}
 
-	public List<Wishlist> buscarWishlists() {
-		return wishlistRepository.findAll();
+	public Wishlist buscarWishlist(Long idCliente) throws WishlistNotFoundException {
+		Wishlist wishlist = wishlistRepository.getByIdCliente(idCliente);
+		if (wishlist == null) {
+			throw new WishlistNotFoundException();
+		}
+		return wishlist;
 	}
 
-	public Wishlist buscarWishlist(Long id) throws WishlistNotFoundException {
-		Optional<Wishlist> wishlist = wishlistRepository.findById(id);
-		return wishlist.orElseThrow(() -> new WishlistNotFoundException());
+	public List<Wishlist> buscarWishlists() {
+		return wishlistRepository.findAll();
 	}
 }

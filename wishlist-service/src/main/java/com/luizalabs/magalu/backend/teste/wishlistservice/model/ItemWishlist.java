@@ -4,18 +4,16 @@ import java.util.Date;
 
 public class ItemWishlist {
 
-	private Long id;
-
 	private Long idProduto;
 
 	private Date criacao;
 
-	public Long getId() {
-		return id;
+	public ItemWishlist() {
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public ItemWishlist(Long idProduto) {
+		this.idProduto = idProduto;
+		this.criacao = new Date();
 	}
 
 	public Long getIdProduto() {

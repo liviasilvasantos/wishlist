@@ -1,32 +1,47 @@
 package com.luizalabs.magalu.backend.teste.wishlistservice.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "wishlist")
 public class Wishlist {
 
 	@Id
-	private Long id;
+	private String id;
 
 	private String descricao;
 
 	private Long idCliente;
 
-	@DBRef(lazy = true)
 	private List<ItemWishlist> items;
 
 	private Date criacao;
 
-	public Long getId() {
+	public Wishlist() {
+	}
+
+	public Wishlist(String descricao, Long idCliente) {
+		this.descricao = descricao;
+		this.idCliente = idCliente;
+		this.criacao = new Date();
+	}
+
+	public Wishlist(String id, String descricao, Long idCliente) {
+		this.id = id;
+		this.descricao = descricao;
+		this.idCliente = idCliente;
+		this.criacao = new Date();
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -60,5 +75,12 @@ public class Wishlist {
 
 	public void setItems(List<ItemWishlist> items) {
 		this.items = items;
+	}
+
+	public void addItem(ItemWishlist item) {
+		if (items == null) {
+			items = new ArrayList<>();
+		}
+		items.add(item);
 	}
 }
