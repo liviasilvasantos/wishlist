@@ -49,5 +49,5 @@ Acesse http://localhost:8080/swagger-ui.
 
 ## Trabalhos futuros
 
-Vejo que a separação das camadas poderia ser melhor, utilizando os conceitos de Clean Arch, e separando as responsabilidades em módulos diferentes, isolando o código de maneira a deixar o core totalmente livre de dependências de framework.
+Vejo que a separação das camadas poderia ser melhorada, utilizando os conceitos de Clean Arch, e separando as responsabilidades em módulos diferentes, isolando o código de maneira a deixar o core totalmente livre de dependências de framework. 
 
