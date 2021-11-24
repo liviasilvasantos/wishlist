@@ -44,18 +44,12 @@ public class WishlistService {
 	public Wishlist addItemWishlist(Long idCliente, ItemWishlist item) {
 		Wishlist wishlist = buscarWishlist(idCliente);
 
-		try {
-			buscarProdutoWishlist(idCliente, item.getIdProduto());
-			throw new ItemDuplicatedException(item.getIdProduto());
-		} catch (WishlistNotFoundException e) {
-		}
-
 		wishlist.addItem(item);
 		wishlistRepository.save(wishlist);
 
 		return wishlist;
 	}
-	
+
 	public void removeItemWishlist(Long idCliente, Long idProduto) {
 		Wishlist wishlist = buscarProdutoWishlist(idCliente, idProduto);
 		wishlist.removeItem(idProduto);

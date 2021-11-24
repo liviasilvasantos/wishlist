@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.luizalabs.magalu.backend.teste.wishlistservice.error.ItemDuplicatedException;
 import com.luizalabs.magalu.backend.teste.wishlistservice.error.LimiteMaximoWishlistException;
 
 @Document(collection = "wishlist")
@@ -87,6 +88,11 @@ public class Wishlist {
 		if (items.size() == 20) {
 			throw new LimiteMaximoWishlistException();
 		}
+
+		if (items.stream().anyMatch(i -> i.getIdProduto() == item.getIdProduto())) {
+			throw new ItemDuplicatedException(item.getIdProduto());
+		}
+
 		items.add(item);
 	}
 
