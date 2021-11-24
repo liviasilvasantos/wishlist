@@ -1,11 +1,11 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.domain.service;
+package com.luizalabs.magalu.backend.teste.wishlistservice.core.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.WishlistNotFoundException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.WishlistNotFoundException;
 import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.ItemWishlist;
 import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.Wishlist;
 import com.luizalabs.magalu.backend.teste.wishlistservice.output.repository.WishlistRepository;

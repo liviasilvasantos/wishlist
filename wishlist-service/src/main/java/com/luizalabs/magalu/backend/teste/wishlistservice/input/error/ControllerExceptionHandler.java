@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.ItemDuplicatedException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.LimiteMaximoWishlistException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.WishlistNotFoundException;
 import com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto.ErrorDTO;
 
 @ControllerAdvice

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.domain.service.WishlistService;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.service.WishlistService;
 import com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto.ItemWishlistRequest;
 import com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto.WishlistDTO;
 

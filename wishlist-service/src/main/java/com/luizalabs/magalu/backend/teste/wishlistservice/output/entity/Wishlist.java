@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.ItemDuplicatedException;
-import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.LimiteMaximoWishlistException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.ItemDuplicatedException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.core.exception.LimiteMaximoWishlistException;
 
 @Document(collection = "wishlist")
 public class Wishlist {
