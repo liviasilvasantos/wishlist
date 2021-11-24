@@ -34,14 +34,16 @@ Para executar a aplicação:
 1. Gere os artefatos
 ```sh
 cd ../wishlist-service
-./mvnc clean isntall
+./mvnc clean install
 ```
 2. Suba o container do MongoDB
 ```sh
+cd local
 docker-compose -f docker-compose-mongo.yml up
 ```
 3. Suba o container da aplicação
 ```sh
+cd local
 docker-compose -f docker-compose-app.yml up
 ```
 4. Acesse a documentação 
