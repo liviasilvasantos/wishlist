@@ -36,7 +36,7 @@ public class WishlistTest {
 		Wishlist w = new Wishlist();
 		w.addItem(new ItemWishlist(1L));
 
-		assertThat(w.getItems().size() == 1);
+		assertThat(w.getItems().size()).isEqualTo(1);
 	}
 
 	@Test
@@ -46,6 +46,6 @@ public class WishlistTest {
 
 		w.removeItem(1L);
 
-		assertThat(w.getItems().isEmpty());
+		assertThat(w.getItems()).isEmpty();
 	}
 }

@@ -22,13 +22,14 @@ public class WishlistController {
 	private WishlistService wishlistService;
 
 	@GetMapping
-	public WishlistDTO consultarWishlist(@PathVariable Long idCliente) {
-		return WishlistDTO.from(wishlistService.buscarWishlist(idCliente));
+	public ResponseEntity<WishlistDTO> consultarWishlist(@PathVariable Long idCliente) {
+		return ResponseEntity.ok(WishlistDTO.from(wishlistService.buscarWishlist(idCliente)));
 	}
 
 	@GetMapping("/produto/{idProduto}")
-	public WishlistDTO consultarProdutoWishlist(@PathVariable Long idCliente, @PathVariable Long idProduto) {
-		return WishlistDTO.from(wishlistService.buscarProdutoWishlist(idCliente, idProduto));
+	public ResponseEntity<WishlistDTO> consultarProdutoWishlist(@PathVariable Long idCliente,
+			@PathVariable Long idProduto) {
+		return ResponseEntity.ok(WishlistDTO.from(wishlistService.buscarProdutoWishlist(idCliente, idProduto)));
 	}
 
 	@PostMapping("/produto")
