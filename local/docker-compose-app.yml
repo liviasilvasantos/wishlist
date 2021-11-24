@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  wishlist-service:
+    container_name: wishlist-service
+    ports:
+      - '8080:8080'
+    build:
+      context: ../wishlist-service
+      dockerfile: Dockerfile
+    networks:
+      - stack-network
+    environment:
+      MONGODB_URL: mongodb://mongo_test:27017/wishlist
+
+networks:
+  stack-network:
+    driver: bridge
