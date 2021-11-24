@@ -1,6 +1,7 @@
 package com.luizalabs.magalu.backend.teste.wishlistservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.error.WishlistNotFoundException;
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.Wishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.model.dto.ItemWishlistRequest;
+import com.luizalabs.magalu.backend.teste.wishlistservice.model.dto.WishlistDTO;
 import com.luizalabs.magalu.backend.teste.wishlistservice.service.WishlistService;
 
 @RestController
@@ -21,22 +22,24 @@ public class WishlistController {
 	private WishlistService wishlistService;
 
 	@GetMapping
-	public Wishlist consultarWishlist(@PathVariable Long idCliente) throws WishlistNotFoundException {
-		return wishlistService.buscarWishlist(idCliente);
+	public WishlistDTO consultarWishlist(@PathVariable Long idCliente) {
+		return WishlistDTO.from(wishlistService.buscarWishlist(idCliente));
 	}
 
-	@PostMapping
-	public Wishlist criarWishlist(@PathVariable Long idCliente, @RequestBody Wishlist wishlist) {
-		return wishlistService.criarWishlist(wishlist);
+	@GetMapping("/produto/{idProduto}")
+	public WishlistDTO consultarProdutoWishlist(@PathVariable Long idCliente, @PathVariable Long idProduto) {
+		return WishlistDTO.from(wishlistService.buscarProdutoWishlist(idCliente, idProduto));
 	}
 
-	@PostMapping("/items")
-	public void adicionarItemWishlist() {
+	@PostMapping("/produto")
+	public WishlistDTO adicionarItemWishlist(@PathVariable Long idCliente, @RequestBody ItemWishlistRequest item) {
+		return WishlistDTO.from(wishlistService.addItemWishlist(idCliente, item.to()));
 	}
 
-	@DeleteMapping("/items/{itemId}")
-	public void removerItemWishlist(@PathVariable Integer itemId) {
-
+	@DeleteMapping("/produto/{idProduto}")
+	public ResponseEntity removerItemWishlist(@PathVariable Long idCliente, @PathVariable Long idProduto) {
+		wishlistService.removeItemWishlist(idCliente, idProduto);
+		return ResponseEntity.noContent().build();
 	}
 
 }

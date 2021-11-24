@@ -21,4 +21,14 @@ public class ControllerExceptionHandler {
 
 		return ResponseEntity.status(status).body(erro);
 	}
+
+	@ExceptionHandler(ItemDuplicatedException.class)
+	public ResponseEntity<ErrorDTO> handleNotFound(ItemDuplicatedException e, HttpServletRequest request) {
+		HttpStatus status = HttpStatus.NOT_FOUND;
+
+		ErrorDTO erro = new ErrorDTO(System.currentTimeMillis(), status.value(),
+				"Produto " + e.getProduto() + " já existe na Wishlist", e.getMessage(), request.getRequestURI());
+
+		return ResponseEntity.status(status).body(erro);
+	}
 }

@@ -83,4 +83,10 @@ public class Wishlist {
 		}
 		items.add(item);
 	}
+
+	public void removeItem(Long idProduto) {
+		if (items != null) {
+			items.removeIf(i -> i.getIdProduto() == idProduto);
+		}
+	}
 }
