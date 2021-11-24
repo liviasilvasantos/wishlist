@@ -11,7 +11,7 @@ import com.luizalabs.magalu.backend.teste.wishlistservice.error.LimiteMaximoWish
 public class WishlistTest {
 
 	@Test
-	void shouldThrowErrorWhenWishlistIsFull() {
+	void shouldThrowError_whenWishlistIsFull() {
 
 		Wishlist w = new Wishlist();
 
@@ -23,7 +23,7 @@ public class WishlistTest {
 	}
 
 	@Test
-	void shouldThrowErrorWhenProductDuplicatedOnWishlist() {
+	void shouldThrowError_whenProductDuplicatedOnWishlist() {
 
 		Wishlist w = new Wishlist();
 		w.addItem(new ItemWishlist(1L));

@@ -33,13 +33,6 @@ public class Wishlist {
 		this.criacao = new Date();
 	}
 
-	public Wishlist(String id, String descricao, Long idCliente) {
-		this.id = id;
-		this.descricao = descricao;
-		this.idCliente = idCliente;
-		this.criacao = new Date();
-	}
-
 	public String getId() {
 		return id;
 	}
