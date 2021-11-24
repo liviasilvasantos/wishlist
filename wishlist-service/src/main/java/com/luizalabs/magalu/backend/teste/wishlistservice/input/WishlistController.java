@@ -1,4 +1,4 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.controller;
+package com.luizalabs.magalu.backend.teste.wishlistservice.input;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

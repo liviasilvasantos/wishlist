@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.WishlistController;
 import com.luizalabs.magalu.backend.teste.wishlistservice.model.Wishlist;
 import com.luizalabs.magalu.backend.teste.wishlistservice.model.dto.WishlistDTO;
 import com.luizalabs.magalu.backend.teste.wishlistservice.service.WishlistService;
