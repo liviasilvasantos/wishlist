@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.ItemWishlist;
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.Wishlist;
-import com.luizalabs.magalu.backend.teste.wishlistservice.repository.WishlistRepository;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.ItemWishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.Wishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.repository.WishlistRepository;
 
 @Configuration
 public class LoadDB implements CommandLineRunner {

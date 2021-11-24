@@ -1,4 +1,4 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.model.dto;
+package com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto;
 
 public class ErrorDTO {
 

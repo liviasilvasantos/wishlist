@@ -1,4 +1,4 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.model;
+package com.luizalabs.magalu.backend.teste.wishlistservice.output.entity;
 
 import java.util.Date;
 

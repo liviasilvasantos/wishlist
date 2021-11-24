@@ -1,6 +1,6 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.model.dto;
+package com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.ItemWishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.ItemWishlist;
 
 public class ItemWishlistRequest {
 

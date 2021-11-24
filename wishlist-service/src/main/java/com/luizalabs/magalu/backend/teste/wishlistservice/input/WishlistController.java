@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.dto.ItemWishlistRequest;
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.dto.WishlistDTO;
-import com.luizalabs.magalu.backend.teste.wishlistservice.service.WishlistService;
+import com.luizalabs.magalu.backend.teste.wishlistservice.domain.service.WishlistService;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto.ItemWishlistRequest;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto.WishlistDTO;
 
 @RestController
 @RequestMapping("/cliente/{idCliente}/wishlist")

@@ -1,9 +1,9 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.repository;
+package com.luizalabs.magalu.backend.teste.wishlistservice.output.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.Wishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.Wishlist;
 
 public interface WishlistRepository extends MongoRepository<Wishlist, String> {
 

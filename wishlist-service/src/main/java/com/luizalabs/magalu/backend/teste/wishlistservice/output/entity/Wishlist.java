@@ -1,4 +1,4 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.model;
+package com.luizalabs.magalu.backend.teste.wishlistservice.output.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.error.ItemDuplicatedException;
-import com.luizalabs.magalu.backend.teste.wishlistservice.error.LimiteMaximoWishlistException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.ItemDuplicatedException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.LimiteMaximoWishlistException;
 
 @Document(collection = "wishlist")
 public class Wishlist {

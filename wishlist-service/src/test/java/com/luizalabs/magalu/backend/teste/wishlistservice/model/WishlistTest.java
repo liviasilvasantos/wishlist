@@ -5,8 +5,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.Test;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.error.ItemDuplicatedException;
-import com.luizalabs.magalu.backend.teste.wishlistservice.error.LimiteMaximoWishlistException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.ItemDuplicatedException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.input.error.LimiteMaximoWishlistException;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.ItemWishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.Wishlist;
 
 public class WishlistTest {
 

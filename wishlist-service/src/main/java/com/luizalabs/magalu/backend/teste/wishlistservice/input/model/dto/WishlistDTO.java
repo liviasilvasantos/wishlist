@@ -1,10 +1,10 @@
-package com.luizalabs.magalu.backend.teste.wishlistservice.model.dto;
+package com.luizalabs.magalu.backend.teste.wishlistservice.input.model.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.luizalabs.magalu.backend.teste.wishlistservice.model.Wishlist;
+import com.luizalabs.magalu.backend.teste.wishlistservice.output.entity.Wishlist;
 
 public class WishlistDTO {
 
