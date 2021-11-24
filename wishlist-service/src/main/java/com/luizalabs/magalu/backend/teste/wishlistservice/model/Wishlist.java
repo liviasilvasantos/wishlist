@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.luizalabs.magalu.backend.teste.wishlistservice.error.LimiteMaximoWishlistException;
+
 @Document(collection = "wishlist")
 public class Wishlist {
 
@@ -80,6 +82,10 @@ public class Wishlist {
 	public void addItem(ItemWishlist item) {
 		if (items == null) {
 			items = new ArrayList<>();
+		}
+
+		if (items.size() == 20) {
+			throw new LimiteMaximoWishlistException();
 		}
 		items.add(item);
 	}
